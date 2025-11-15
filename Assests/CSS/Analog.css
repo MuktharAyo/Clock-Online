@@ -28,7 +28,7 @@
     height: 15px;
     background: var(--clr);
     border-radius: 50%;
-    z-index: 10000;
+    z-index: 1;
 }
 
 /* Make each hand container fill the analog */

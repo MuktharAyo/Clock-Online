@@ -36,6 +36,8 @@
     --clr4: rgb(72, 168, 77);
     /* red */
     --clr5: rgb(214, 79, 58);
+    /* lemon */
+    --clr6: rgb(206, 206, 14);
 
 
 }
@@ -358,6 +360,9 @@ nav {
 
 #clrFive {
     color: var(--clr5)
+}
+#clrSix {
+    color: var(--clr6)
 }
 
 .content {

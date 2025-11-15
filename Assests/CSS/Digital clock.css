@@ -1,0 +1,58 @@
+/* Setting Styles */
+.format-hour-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 0;
+    margin-block: 24px;
+}
+
+.format-hour-display span {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.hour-display {
+    border-radius: 6px;
+    display: flex;
+    gap: 1px;
+    padding: 4px;
+    background: hsla(0, 0%, 100%, .1);
+}
+
+.hour-display button {
+    background: none;
+    border: none;
+    border-radius: 4px;
+    color: var(--clr);
+    cursor: pointer;
+    font-size: .7rem;
+    font-weight: 500;
+    min-width: 36px;
+    outline: none;
+    padding: 2px 4px;
+    transition: all .2s ease;
+    white-space: nowrap;
+}
+
+.hour-display button.active {
+    background: var(--btn-border);
+    color: white;
+}
+
+/* Page Styles */
+.digital {
+    font-family: 'DSEG7';
+    font-size: 110px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.ampm {
+    display: inline-block;
+    font-size: 24px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    line-height: 1;
+    vertical-align: baseline;
+}

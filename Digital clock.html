@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dseg7@4.5.4/classic.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+
+    <link rel="stylesheet" href="./Assests/Shared/Global.css">
+    <link rel="stylesheet" href="./Assests/CSS/Digital clock.css" />
+    <link rel="stylesheet" href="./Assests/Shared/Media.css">
+</head>
+
+<body>
+
+    <main>
+        <nav>
+            <span class="logo">clock online</span>
+
+            <div class="navbar-clock-selector">
+                <button id="clock-type-btn" class="clock-type-button" aria-expanded="false" aria-haspopup="menu"
+                    aria-controls="clock-type-dropdown">
+                    <span class="clock-type-text">Digital Clock</span>
+                    <svg class="clock-type-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+
+                <div class="clock-type-dropdown" id="clock-type-dropdown" role="menu" aria-hidden="true">
+                    <a href="Digital clock.html" class="clock-type-option is-active" role="menuitem" tabindex="0"
+                        data-value="digital">Digital Clock</a>
+
+                    <a href="Analog.html" class="clock-type-option" role="menuitem" tabindex="-1"
+                        data-value="analog">Analog Clock</a>
+
+                    <a href="Timer.html" class="clock-type-option" role="menuitem" tabindex="-1"
+                        data-value="timer">Timer</a>
+
+                    <a href="Stopwatch.html" class="clock-type-option" role="menuitem" tabindex="-1"
+                        data-value="stopwatch">Stopwatch</a>
+                </div>
+            </div>
+
+            <button id="settingBtn">
+                <i class="ri-settings-5-line"></i>
+            </button>
+
+            <div id="settingPanel" class="setting">
+                <h2>settings</h2>
+                <div class="format-hour-display">
+                    <span>format</span>
+                    <div class="hour-display" id="format-hour">
+                        <button class="segment-option" data-format="24h">24H</button>
+                        <button class="segment-option active" data-format="12h">12H</button>
+                    </div>
+                </div>
+
+                <div class="template">
+                    <h4>Clock Template</h4>
+                    <div class="swatch-controls" role="toolbar" aria-label="Color swatches">
+                        <button id="clrOne" class="color-swatch" aria-label="white swatch" title="white">
+                            <div class="template-preview-time">12:00:00</div>
+                            <div class="template-preview-name">Digital</div>
+                        </button>
+
+                        <button id="clrTwo" class="color-swatch" aria-label="blue swatch" title="blue">
+                            <div class="template-preview-time">12:00:00</div>
+                            <div class="template-preview-name">Digital-blue</div>
+                        </button>
+
+                        <button id="clrThree" class="color-swatch" aria-label="amber swatch" title="amber">
+                            <div class="template-preview-time">12:00:00</div>
+                            <div class="template-preview-name">Digital-amber</div>
+                        </button>
+
+                        <button id="clrFour" class="color-swatch" aria-label="green swatch" title="green">
+                            <div class="template-preview-time">12:00:00</div>
+                            <div class="template-preview-name">Digital-green</div>
+                        </button>
+
+                        <button id="clrFive" class="color-swatch" aria-label="red swatch" title="red">
+                            <div class="template-preview-time">12:00:00</div>
+                            <div class="template-preview-name">Digital-red</div>
+                        </button>
+                        <button id="clrFive" class="color-swatch" aria-label="red swatch" title="red">
+                            <div class="template-preview-time">12:00:00</div>
+                            <div class="template-preview-name">Digital-red</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div id="time" class="digital">
+                <!-- Time display here-->
+            </div>
+
+            <div id="day">
+                <!-- Day, Month and Year display here -->
+            </div>
+        </div>
+
+    </main>
+
+    <script src="./Assests/Shared/Global.js"></script>
+    <script src="./Assests/JS/Digital clock.js"></script>
+</body>
+
+</html>

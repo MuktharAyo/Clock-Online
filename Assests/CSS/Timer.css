@@ -1,0 +1,108 @@
+/* Setting Styles */
+.inputsEdits {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    position: relative;
+}
+
+.controls label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.controls input {
+    width: 70px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg);
+    color: inherit;
+    font-size: 16px;
+}
+
+.controls input:focus {
+    outline: 1px solid var(--btn-border);
+    background: var(--btn-bg);
+    box-shadow: 0 0 5px var(--btn-border);
+}
+
+.controls input.invalid {
+    outline: 2px solid rgba(255, 99, 71, 0.25);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputsEdits .controls:not(:last-child)::after {
+    color: rgba(255, 255, 255, 0.6);
+    content: ":";
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: absolute;
+    right: -.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Page Styles */
+.timer {
+    font-family: 'DSEG7';
+    font-size: 110px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer.overtime {
+    color: #ff3333;
+    text-shadow: 0 0 5px #ff3333;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 8px
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: hsla(0, 0%, 100%, .1);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.action-icon {
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#startPause.action-btn {
+    background: var(--active);
+}
+
+#reset.action-btn {
+    display: none;
+}

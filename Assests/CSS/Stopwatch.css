@@ -1,0 +1,185 @@
+/* Setting Styles */
+.settings-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 0;
+    margin-block-start: 24px;
+}
+
+.settings-toggle .settings-label {
+    color: var(--page-text);
+    font-size: .9rem;
+    white-space: nowrap;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    background: var(--bg);
+    border-radius: 20px;
+    display: block;
+    flex-shrink: 0;
+    height: 20px;
+    width: 36px;
+    /* margin-left: auto; */
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.toggle-input:checked+.toggle-slider {
+    background: var(--btn-border);
+}
+
+.toggle-slider:before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    height: 16px;
+    width: 16px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    transition: transform .2s ease;
+}
+
+.toggle-input:checked+.toggle-slider:before {
+    transform: translateX(16px);
+}
+
+/* Page Styles */
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+
+.meta {
+    text-align: center;
+    color: var(--muted);
+}
+
+.display {
+    font-family: 'DSEG7';
+    font-size: 110px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    /* font-feature-settings: "tnum" 1, "zero" 1; */
+    letter-spacing: 0.6px;
+}
+
+ .ms {
+  font-size: 0.65em;     /* smaller than main time */
+  font-weight: 400;      /* lighter if you like */
+  margin-left: 0.15rem;  /* a tiny gap after seconds */
+  vertical-align: baseline;
+  opacity: 0.9;
+} 
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.action-icon {
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+button[disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+#startPause.action-btn {
+    background: var(--active);
+}
+
+.action-btn.small {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.action-btn.small .action-icon {
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.laps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-inline: auto;
+    min-width: 500px;
+}
+
+.laps-head {
+    display: flex;
+    justify-content: center;
+}
+
+.laps {
+    /* margin-inline: auto; */
+    /* min-width: 500px; */
+    max-height: 190px;
+    overflow: auto;
+
+}
+
+.laps::-webkit-scrollbar {
+    width: 8px
+}
+
+.laps::-webkit-scrollbar-track {
+    background: hsla(0, 0%, 100%, .05);
+    border-radius: 4px
+}
+
+.laps::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 100%, .2);
+    border-radius: 4px
+}
+
+.laps::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 100%, .3)
+}
+
+.lap {
+    display: flex;
+    justify-content: space-between;
+    background: hsla(0, 0%, 100%, .08);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 17px;
+}
+
+.lap:first-child {
+    background: rgba(76, 175, 80, .2);
+    border: 1px solid rgba(76, 175, 80, .3);
+}
+
+.lap:not(:last-child) {
+    margin-bottom: 10px;
+}

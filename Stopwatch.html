@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dseg7@4.5.4/classic.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+
+    <link rel="stylesheet" href="./Assests/Shared/Global.css" />
+    <link rel="stylesheet" href="./Assests/CSS/Stopwatch.css" />
+    <link rel="stylesheet" href="./Assests/Shared/Media.css">
+
+</head>
+
+<body>
+    <main>
+        <nav>
+            <span class="logo">clock online</span>
+
+            <div class="navbar-clock-selector">
+                <button id="clock-type-btn" class="clock-type-button" aria-expanded="false" aria-haspopup="menu"
+                    aria-controls="clock-type-dropdown">
+                    <span class="clock-type-text">Stopwatch</span>
+                    <svg class="clock-type-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+
+                <div class="clock-type-dropdown" id="clock-type-dropdown" role="menu" aria-hidden="true">
+                    <a href="Digital clock.html" class="clock-type-option" role="menuitem" tabindex="0"
+                        data-value="digital">Digital Clock</a>
+
+                    <a href="Analog.html" class="clock-type-option" role="menuitem" tabindex="-1"
+                        data-value="analog">Analog Clock</a>
+
+                    <a href="Timer.html" class="clock-type-option" role="menuitem" tabindex="-1"
+                        data-value="timer">Timer</a>
+
+                    <a href="Stopwatch.html" class="clock-type-option is-active" role="menuitem" tabindex="-1"
+                        data-value="stopwatch">Stopwatch</a>
+                </div>
+            </div>
+
+            <button id="settingBtn">
+                <i class="ri-settings-5-line"></i>
+            </button>
+
+            <div id="settingPanel" class="setting">
+                <h2>settings</h2>
+
+                <div class="settings-toggle">
+                    <span class="settings-label">Milliseconds</span>
+                    <input type="checkbox" id="show-milliseconds-checkbox" class="toggle-input">
+                    <label for="show-milliseconds-checkbox" class="toggle-slider"></label>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="stopwatch">
+                <div class="meta">
+                    <div class="hint">Space = Start/Pause • R = Reset • L = Lap</div>
+                </div>
+
+                <div class="display" id="display" aria-live="polite"></div>
+
+                <div class="controls" role="toolbar" aria-label="stopwatch controls">
+                    <button id="startPause" class="action-btn" aria-pressed="false">
+                        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button id="lapReset" class="action-btn" disabled>
+                        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 22V2.8a.8.8 0 0 1 1.17-.71l11.38 5.69a.8.8 0 0 1 0 1.44L6 15.5"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="laps-container">
+                    <div class="laps" id="laps" aria-live="polite" aria-label="Lap times">
+                        <!-- Lap entries will appear here -->
+                    </div>
+
+                    <div class="laps-head">
+                        <button id="clearLaps" class="action-btn small" disabled>
+                            <svg viewBox="0 0 1024 1024" class="action-icon" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M960 160h-291.2a160 160 0 0 0-313.6 0H64a32 32 0 0 0 0 64h896a32 32 0 0 0 0-64zM512 96a96 96 0 0 1 90.24 64h-180.48A96 96 0 0 1 512 96zM844.16 290.56a32 32 0 0 0-34.88 6.72A32 32 0 0 0 800 320a32 32 0 1 0 64 0 33.6 33.6 0 0 0-9.28-22.72 32 32 0 0 0-10.56-6.72zM832 416a32 32 0 0 0-32 32v96a32 32 0 0 0 64 0v-96a32 32 0 0 0-32-32zM832 640a32 32 0 0 0-32 32v224a32 32 0 0 1-32 32H256a32 32 0 0 1-32-32V320a32 32 0 0 0-64 0v576a96 96 0 0 0 96 96h512a96 96 0 0 0 96-96v-224a32 32 0 0 0-32-32z"
+                                        fill="#fffff"></path>
+                                    <path
+                                        d="M384 768V352a32 32 0 0 0-64 0v416a32 32 0 0 0 64 0zM544 768V352a32 32 0 0 0-64 0v416a32 32 0 0 0 64 0zM704 768V352a32 32 0 0 0-64 0v416a32 32 0 0 0 64 0z"
+                                        fill="#fffff"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="./Assests/Shared/Global.js"></script>
+    <script src="./Assests/JS/Stopwatch.js"></script>
+</body>
+
+</html>

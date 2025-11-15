@@ -1,0 +1,88 @@
+/* Clock container (your existing) */
+.analog {
+    position: relative;
+    /* ensure absolute children are relative to analog */
+    width: 350px;
+    height: 350px;
+    /* ... your existing background/border styles ... */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url(../Images/Clock-Face.svg); */
+    background-size: cover;
+    /* padding: 4px; */
+    /* border: 2px solid var(--clr); */
+    border-radius: 50%;
+    /* box-shadow: 0 0 15px 15px var(--clr); */
+}
+
+.analog svg path,
+.analog svg circle {
+    fill: var(--clr);
+}
+
+.analog::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+/* Make each hand container fill the analog */
+.analog .hr,
+.analog .mn,
+.analog .sc {
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0; */
+    display: block;
+    pointer-events: none;
+    /* rotation will be applied to these containers by JS */
+}
+
+/* Common styling for the visible shafts using ::before */
+.hr::before,
+.mn::before,
+.sc::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    /* place the base of the shaft at the analog center */
+    transform: translateX(-50%);
+    border-radius: 6px 6px 0 0;
+    z-index: 10;
+}
+
+/* Individual shaft sizes (change heights to tune lengths) */
+.hr::before {
+    width: 4px;
+    height: 70px;
+    /* hour hand length */
+    /* background: #D32F2F; */
+    background: var(--clr);
+}
+
+.mn::before {
+    width: 4px;
+    height: 100px;
+    /* minute hand length */
+    background: var(--clr);
+}
+
+.sc::before {
+    width: 2px;
+    height: 130px;
+    /* second hand length */
+    background: #D32F2F;
+}
+
+/* pivot is the analog center (the container is rotated around center) */
+.hr,
+.mn,
+.sc {
+    transform-origin: center center;
+}

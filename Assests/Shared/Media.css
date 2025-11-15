@@ -1,0 +1,174 @@
+/* General Styles */
+@media screen and (max-width:900px) {
+    nav .logo {
+        display: none;
+    }
+
+}
+
+/* Digital Styles */
+@media (max-width:900px) {
+    .content {
+        gap: 32px;
+    }
+
+    .digital,
+    .timer,
+    .display {
+        font-size: 86px;
+    }
+
+    .analog {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hr::before {
+        width: 4px;
+        height: 60px;
+    }
+
+    .mn::before {
+        width: 4px;
+        height: 80px;
+    }
+
+    .sc::before {
+        width: 2px;
+        height: 100px;
+    }
+
+    .meta {
+        display: none;
+    }
+
+    /* .display {
+        font-size: 76px;
+    } */
+    .ms {
+        font-size: 48px;
+    }
+
+    .laps .ms {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width:600px) {
+    .content {
+        gap: 24px;
+        height: calc(100vh - 42px);
+    }
+
+    .digital,
+    .timer,
+    .display {
+        font-size: 64px;
+    }
+
+    .analog {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hr::before {
+        width: 4px;
+        height: 60px;
+    }
+
+    .mn::before {
+        width: 4px;
+        height: 70px;
+    }
+
+    .sc::before {
+        width: 2px;
+        height: 80px;
+    }
+
+    #day {
+        font-size: 20px;
+    }
+
+    /* .display {
+        font-size: 56px;
+    } */
+    /* .stopwatch { */
+    /* min-height: 410px; */
+    /* border: 1px solid red; */
+    /* } */
+
+    .ms {
+        font-size: 36px;
+    }
+
+    /* .stopwatch .controls {
+        order: 1; */
+    /* position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-inline: auto; */
+    /* } */
+
+    .laps-container {
+        min-width: 100%;
+    }
+
+    .laps {
+        /* order: 2; */
+        max-height: 250px;
+    }
+
+    .laps-head {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width:480px) {
+    .content {
+        gap: 20px;
+    }
+
+    .digital,
+    .timer,
+    .display {
+        font-size: 48px;
+    }
+
+    .hr::before {
+        width: 2px;
+        height: 60px;
+    }
+
+    .mn::before {
+        width: 2px;
+        height: 70px;
+    }
+
+    .sc::before {
+        width: 1px;
+        height: 80px;
+    }
+
+    #day {
+        font-size: 18px;
+    }
+
+    .action-btn {
+        height: 2.8rem;
+        width: 2.8rem;
+        border-radius: 6px;
+    }
+
+    .action-icon {
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+
+    .ms {
+        font-size: 26px;
+    }
+
+}

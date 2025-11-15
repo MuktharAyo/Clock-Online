@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer Countdown</title>
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dseg7@4.5.4/classic.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+    <link rel="stylesheet" href="./Assests/Shared/Global.css">
+    <link rel="stylesheet" href="./Assests/CSS/Timer.css" />
+    <link rel="stylesheet" href="./Assests/Shared/Media.css">
+
+</head>
+
+<body>
+    <main>
+        <nav>
+            <span class="logo">clock online</span>
+
+            <div class="navbar-clock-selector">
+                <button id="clock-type-btn" class="clock-type-button" aria-expanded="false" aria-haspopup="menu"
+                    aria-controls="clock-type-dropdown">
+                    <span class="clock-type-text">Timer</span>
+                    <svg class="clock-type-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+
+                <div class="clock-type-dropdown" id="clock-type-dropdown" role="menu" aria-hidden="true">
+                    <a href="Digital clock.html" class="clock-type-option" role="menuitem" tabindex="0"
+                        data-value="digital">Digital Clock</a>
+
+                    <a href="Analog.html" class="clock-type-option" role="menuitem" tabindex="-1"
+                        data-value="analog">Analog Clock</a>
+
+                    <a href="Timer.html" class="clock-type-option is-active" role="menuitem" tabindex="-1"
+                        data-value="timer">Timer</a>
+
+                    <a href="Stopwatch.html" class="clock-type-option" role="menuitem" tabindex="-1"
+                        data-value="stopwatch">Stopwatch</a>
+                </div>
+            </div>
+
+            <button id="settingBtn">
+                <i class="ri-settings-5-line"></i>
+            </button>
+
+            <div id="settingPanel" class="setting">
+                <h2>settings</h2>
+                <h4>Set Time</h4>
+
+                <div class="inputsEdits">
+                    <div class="controls">
+                        <label for="setValueH" style="font-size:12px; color:var(--muted)">h</label>
+                        <input id="setValueH" type="number" min="0" max="23" aria-label="Set hour" />
+                    </div>
+
+                    <div class="controls">
+                        <label for="setValueM">m</label>
+                        <input id="setValueM" type="number" min="0" max="59" aria-label="Set minute" />
+                    </div>
+
+                    <div class="controls">
+                        <label for="setValueS" style="font-size:12px; color:var(--muted)">s</label>
+                        <input id="setValueS" type="number" min="0" max="59" aria-label="Set seconds" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content" role="region" aria-label="Editable timer">
+            <div class="timer" id="timer"></div>
+
+            <div class="actions">
+                <button id="startPause" class="action-btn">
+                    <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                        </path>
+                    </svg>
+                </button>
+                <button id="reset" class="action-btn">
+                    <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                        <path d="M3 3v5h5"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="./Assests/Shared/Global.js"></script>
+    <script src="./Assests/JS/Timer.js"></script>
+
+</body>
+
+</html>

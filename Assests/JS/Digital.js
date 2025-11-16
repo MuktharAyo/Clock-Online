@@ -8,7 +8,10 @@ const formatButtons = Array.from(document.querySelectorAll(".segment-option"));
 
 // load use12Hour from localStorage (default false)
 const saved = localStorage.getItem("use12Hour");
-let use12Hour = saved === null ? false : saved === "true";
+let use12Hour = saved === null ? true : saved === "true";
+
+// If nothing was saved previously, persist the chosen default so UI stays consistent next load
+if (saved === null) localStorage.setItem("use12Hour", String(use12Hour));
 
 function formatCount(n) {
   return String(n).padStart(2, "0");
